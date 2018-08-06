@@ -1,0 +1,5 @@
+main:
+        #        data: '{"status":"success","data":{"resultType":"vector","result":[{"metric":{"instance":"10.231.4.12:9100"},"value":[1533566237.93,"18.20969650508735"]},{"metric":{"instance":"10.231.4.4:9100"},"value":[1533566237.93,"19.28541666665599"]},{"metric":{"instance":"10.231.4.5:9100"},"value":[1533566237.93,"18.78333333331588"]},{"metric":{"instance":"10.231.4.6:9100"},"value":[1533566237.93,"19.243750000011175"]},{"metric":{"instance":"10.231.4.7:9100"},"value":[1533566237.93,"7.252083333272225"]},{"metric":{"instance":"10.231.4.8:9100"},"value":[1533566237.93,"11.864583333323637"]},{"metric":{"instance":"10.231.6.4:9100"},"value":[1533566237.93,"9.091666666669568"]}]}}'
+        operation: '.data.result[] | "\(.metric.instance) CPU usage \(.value[1]|tonumber|floor)%" | sub(":9100"; "")'
+        output: strings
+        url: 'https://pastebin.com/raw/0HD9KMby'
